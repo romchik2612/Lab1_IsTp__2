@@ -1,0 +1,74 @@
+﻿@model Lab1_IsTp__2.Club
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Club</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                <label asp-for="Name" class="control-label"></label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PlayersNumber" class="control-label"></label>
+                <input asp-for="PlayersNumber" class="form-control" />
+                <span asp-validation-for="PlayersNumber" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DateOfBirth" class="control-label"></label>
+                <input asp-for="DateOfBirth" class="form-control" />
+                <span asp-validation-for="DateOfBirth" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TrophiesNumber" class="control-label"></label>
+                <input asp-for="TrophiesNumber" class="form-control" />
+                <span asp-validation-for="TrophiesNumber" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="NationalId" class="control-label"></label>
+                <select asp-for="NationalId" class="form-control" asp-items="ViewBag.NationalId"></select>
+                <span asp-validation-for="NationalId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PositionInLeague" class="control-label"></label>
+                <input asp-for="PositionInLeague" class="form-control" />
+                <span asp-validation-for="PositionInLeague" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CupId" class="control-label"></label>
+                <select asp-for="CupId" class="form-control" asp-items="ViewBag.CupId"></select>
+                <span asp-validation-for="CupId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="LeagueId" class="control-label"></label>
+                <select asp-for="LeagueId" class="form-control" asp-items="ViewBag.LeagueId"></select>
+                <span asp-validation-for="LeagueId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="EuroCupId" class="control-label"></label>
+                <select asp-for="EuroCupId" class="form-control" asp-items="ViewBag.EuroCupId"></select>
+                <span asp-validation-for="EuroCupId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
